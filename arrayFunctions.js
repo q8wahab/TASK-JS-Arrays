@@ -10,7 +10,22 @@
  */
 function isArrayLengthOdd(numbers) {
   // Your code here
+  // let length = numbers.length;
+  // if (length % 2 == 0) {
+  //   console.log("false");
+  // } else {
+  //   console.log("true");
+  // }
+
+  let lenght = numbers.length;
+  if (lenght % 2 == 0) {
+    return false;
+  } else {
+    return true;
+  }
 }
+
+console.log(isArrayLengthOdd([1, 2, 3]));
 
 /**
  * isArrayLengthEven(numbers):
@@ -23,8 +38,14 @@ function isArrayLengthOdd(numbers) {
  * isArrayLengthEven([1, 2, 3, 4]) -> true
  */
 function isArrayLengthEven(numbers) {
-  // Your code here
+  let lenght = numbers.length;
+  if (lenght % 2 == 0) {
+    console.log("true");
+  } else {
+    console.log("flse");
+  }
 }
+isArrayLengthEven([1, 2, 3]);
 
 /**
  * addLailaToArray(instructors):
@@ -34,9 +55,13 @@ function isArrayLengthEven(numbers) {
  * e.g.
  * addLailaToArray(["Mshary", "Hasan"]) -> ["Mshary", "Hasan", "Laila"]
  */
+
 function addLailaToArray(instructors) {
-  // Your code here
+  instructors.push("Laila");
+  return instructors;
 }
+
+console.log(addLailaToArray(["Mshary", "Hasan"]));
 
 /**
  * eliminateTeam(teams):
@@ -47,9 +72,10 @@ function addLailaToArray(instructors) {
  * eliminateTeam(["Brazil", "Germany", "Italy"]) -> "Italy"
  */
 function eliminateTeam(teams) {
-  // Your code here
+  teams.pop();
+  return teams;
 }
-
+console.log(eliminateTeam(["Brazil", "Germany", "Italy"]));
 /**
  * secondHalfOfArrayIfItIsEven(fruits):
  * - receives array `fruits`
@@ -61,8 +87,14 @@ function eliminateTeam(teams) {
  * secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi", "blueberry"]) -> []
  */
 function secondHalfOfArrayIfItIsEven(fruits) {
-  // Your code here
+  let lenght = fruits.length;
+  if (lenght % 2 == 0) {
+    return fruits.slice(2, 4);
+  } else {
+    return [];
+  }
 }
+console.log(secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi"]));
 
 /**
  * youGottaCalmDown(shout):
@@ -79,5 +111,12 @@ function secondHalfOfArrayIfItIsEven(fruits) {
  * - Use string method .slice()
  */
 function youGottaCalmDown(shout) {
-  // Your code here
+  const firstIndex = shout.indexOf("!");
+
+  if (firstIndex === -1 || firstIndex === 0) {
+    return shout;
+  }
+  return shout.slice(0, firstIndex + 1);
 }
+
+console.log(youGottaCalmDown("Hellooooo!!!!!"));
